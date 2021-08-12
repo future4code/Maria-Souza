@@ -86,6 +86,43 @@ function imprimeMensagem() {
 
 console.log(imprimeMensagem())
 
-// D
 
-// Não deu tempo de fazer ainda. =/ 
+// EXERCÍCIO DE CÓDIGO 03
+
+
+// Input
+const numeroUm1 = Number(prompt("Insira o primeiro número!"))
+const numeroDoi2 = Number(prompt("Insira o segundo número!"))
+
+console.log("Números inseridos:", numeroUm1, "e", numeroDoi2)
+
+// Soma
+function somandoNumero(numeroUm1, numeroDoi2) {
+    const vamosSomar = numeroUm1 + numeroDoi2
+    return vamosSomar
+}
+
+console.log("A soma desses números é igual a:", somandoNumero(numeroUm1, numeroDoi2))
+
+// Subtração
+function subtraindoNumero(numeroUm1, numeroDoi2) {
+    const vamosSubtrair = numeroUm1 - numeroDoi2
+    return vamosSubtrair
+}
+
+console.log("A subtração desses números é igual a:", subtraindoNumero(numeroUm1, numeroDoi2))
+
+// Multiplicação
+function multiplicandoNumero(numeroUm1, numeroDoi2) {
+    const vamosMultiplicar = numeroUm1 * numeroDoi2
+    return vamosMultiplicar
+}
+
+console.log("A multiplicação desses números é igual a:", multiplicandoNumero(numeroUm1, numeroDoi2))
+
+// Divisão
+function dividindoNumero(numeroUm1, numeroDoi2) {
+    const vamosDividir = numeroUm1 / numeroDoi2
+    return vamosDividir
+}
+console.log("A divisão desses números é igual a:", dividindoNumero(numeroUm1, numeroDoi2))
