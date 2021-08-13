@@ -107,9 +107,9 @@ trocaPrimeiroEUltimo()
 
 // EXERCÍCIO 12
 function checaIgualdadeDesconsiderandoCase(string1, string2) {
-  return (string1 >= string2)
+  return string1.toUpperCase() === string2.toUpperCase()
 }
-checaIgualdadeDesconsiderandoCase
+checaIgualdadeDesconsiderandoCase()
 
 // EXERCÍCIO 13
 function checaRenovacaoRG() {
