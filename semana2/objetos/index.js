@@ -71,7 +71,7 @@ const pessoa = {
 }
 
     function aFuncao(objeto) {
-        console.log(`Eu sou ${pessoa.nome}, mas pode me chamar de: ${pessoa.apelidos[0]}, ${pessoa.apelidos[1]} e ${pessoa.apelidos[2]}.`)
+        console.log(`Eu sou ${objeto.nome}, mas pode me chamar de: ${objeto.apelidos[0]}, ${objeto.apelidos[1]} e ${objeto.apelidos[2]}.`)
 }
 
 aFuncao(pessoa)
@@ -82,7 +82,7 @@ const pessoaAdicao = {
     apelidos: ["Jujuba", "Manjubinha", "Manduxa"]
 }
 
-aFuncao(pessoaAdicao)  // NÃO FUNCIONA
+aFuncao(pessoaAdicao)  // Resolvi com a ajuda do exercício comentado.
 
 
 // EXERCÍCIOS DE CÓDIGO 02
@@ -111,4 +111,36 @@ console.log(funcaoAmigos(pessoaAmiga2))
 
 // EXERCÍCIO DE CÓDIGO 03
 
-// Não deu tempo de fazer. =(
+// Terminei o exercício 03 depois de entregar pois não deu tempo de fazer antes.
+
+// A)
+const listaCompras = []
+
+// B)
+const fruta01 = {
+    nome: "Banana",
+    disponibilidade: true
+}
+
+const fruta02 = {
+    nome: "Maçã",
+    disponibilidade: true
+}
+
+const fruta03 = {
+    nome: "Caqui",
+    disponibilidade: true
+}
+
+// C)
+function colocandoFrutas(frutas) {
+    listaCompras.push(frutas)
+}
+
+colocandoFrutas(fruta01)
+colocandoFrutas(fruta02)
+colocandoFrutas(fruta03)
+
+// D)
+
+console.log(listaCompras)
