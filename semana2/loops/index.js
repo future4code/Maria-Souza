@@ -78,9 +78,13 @@ imprimeListaOriginal()
 
 // B)
 
-// Não deu tempo de fazer. =(
-
-
+function imprimeValorOriginal (arrayOriginal) {
+  for (let valorDoOriginal of arrayOriginal) {
+    console.log(valorDoOriginal / 10)
+  }
+}
+imprimeValorOriginal(arrayOriginal)
+ 
 // C)
 const novoArray = []
   for (let valorPar of arrayOriginal) {
@@ -91,6 +95,29 @@ const novoArray = []
 console.log(novoArray)
 
 // D) 
-// E)
+function imprimeOArray (arrayOriginal) {
+  let stringsDoArray = []
+  let i = 0
+  for(let valorDoString of arrayOriginal){
+  stringsDoArray.push(`O elemento do index ${i} é: ${valorDoString}`)
+  i++
+}
+console.log(stringsDoArray)
+}
+imprimeOArray(arrayOriginal)
 
-// Não deu tempo de fazer essas duas também.
+// E)
+let maiorNum = 0
+let menorNum = Infinity
+function qualMenorMaior(arrayOriginal) {
+  for (let i = 0; i < arrayOriginal.length; i++) {
+    if(arrayOriginal[i] < menorNum) {
+      menorNum = arrayOriginal[i]
+    } else if (arrayOriginal[i] > maiorNum ) {
+      maiorNum = arrayOriginal[i]
+    }
+  }
+  console.log("O maior número do array é: ", maiorNum)
+  console.log("O menor número do array é: ", menorNum)
+}
+qualMenorMaior(arrayOriginal)
