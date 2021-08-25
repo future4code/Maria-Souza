@@ -1,0 +1,59 @@
+body {
+    background-color: pink;
+}
+h1 {
+    color: purple;
+}
+
+h2 {
+    color: purple;
+}
+
+.cabecalho {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+a {
+    text-decoration: none;
+    padding-right: 15px;
+}
+
+a:hover {
+    color: salmon;
+    transition: 300ms;
+}
+
+.nav {
+    text-align: center;
+}
+
+.texto {
+    text-align: center;
+}
+
+.social {
+    text-align: center;
+}
+
+.title {
+    color: slateblue;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+}
+
+input {
+    border: teal;
+    border-radius: 5px;
+}
+
+button {
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: purple;
+    background-color: salmon;
+}
+
+td {
+    text-align: center;
+}
