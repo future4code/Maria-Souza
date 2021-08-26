@@ -42,7 +42,7 @@ img {
 }
 
 div>p:first-child {
-    padding: 30px;
+    padding: 100px;
 }
 
 div img {
@@ -118,6 +118,8 @@ div:last-child {
 
 table {
     width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 td button {
@@ -150,6 +152,9 @@ td button:active {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
 }
 
 #back-button:hover {
