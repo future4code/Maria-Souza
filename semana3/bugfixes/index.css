@@ -30,7 +30,7 @@ img {
 }
 
 div>p:first-child {
-    display: inline;
+    padding: 30px;
 }
 
 div img {
