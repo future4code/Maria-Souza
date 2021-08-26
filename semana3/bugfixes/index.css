@@ -35,7 +35,7 @@ div>p:first-child {
 }
 
 div img {
-    background: black;
+    background:white;
 }
 
 td {
@@ -115,6 +115,14 @@ td button {
     height: 30px;
     border-radius: 5px;
     color: black;
+}
+
+td button:hover {
+    background-color: #8f7f3a;
+}
+
+td button:active {
+    color: white
 }
 
 .container-do-search {
