@@ -1,0 +1,122 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+@font-face {
+    src: url(/assets/Poppins-Regular.ttf);
+    font-family: 'Poppins-Regular';    
+    font-weight: normal;
+}
+
+body {
+    background-color: #F5E6E8;
+    font-family: 'Poppins-Regular', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #192A51;
+    transition: 300ms;
+}
+
+a:hover {
+    color: #AAA1C8;
+    cursor: crosshair;
+}
+
+footer {
+    justify-content: center;
+    padding-top: 20px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+nav {
+    text-align: center;
+    padding: 5px 0 5px 0;
+    background-color: #D5C6E0;
+}
+
+nav a {
+    margin: 20px;
+}
+
+
+.container {
+    max-width: 550px;
+    margin: 0 auto;
+    display: flex;
+    align-content: center;
+}
+
+#avatar {
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    display: block;
+}
+
+#welcome {
+    text-align: center;
+    width: 50%;
+    display: block;
+}
+
+#logo {
+    margin: 0 auto;
+    padding: 10px 0 10px 0;
+    background-color: #967AA1;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+    text-align: center;
+}
+
+#logo>h2 {
+    text-align: center;
+}
+
+#embaixo {
+    padding: 10px 0 5px 0;
+    background-color: #967AA1;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#principal {
+    text-align: justify;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#principal>h2 {
+    text-align: center;
+}
+
+#principal>h3 {
+    text-align: center;
+}
+
+#projetos {
+    margin: 0 auto;
+    display: block;
+    width: 200px;
+    height: 200px;
+}
+
+#mensagem {
+    line-height: 50px;
+}
+
+.enviar {
+    display: block;
+}
+
+#enviando {
+    text-align: center;
+    margin-top: 10px;
+}
