@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.cabecalho {
+    background-color: mediumvioletred;
+    display: flex;
+    justify-content: space-between;
+    line-height: 50px;
+    padding: 0 10px;
+}
+
+.icone {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+#titulo {
+    display: flex;
+    align-items: center;
+}
+#titulo>img {
+    padding: 0;
+    margin-right: 10px;
+}
+
+#titulo>b {
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: left;
+    text-align: left;
+    padding: 5px;
+}
+
+.cabecalho>button {
+    height: 25px;
+    width: 50px;
+    margin-top: 10px;
+}
+
+.sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+main {
+    background-color: lightyellow;
+    flex-grow: 1;
+    display: flex;
+}
+
+nav {
+    width: 200px;
+    background-color: #f2d0e0;
+    padding: 10px;
+}
+
+.bolos {
+    background-color: white;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+    justify-items: center; 
+    align-items: center;
+}
+
+footer {
+    background-color: mediumvioletred;
+    color: black;
+    height: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
