@@ -1,87 +1,83 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+
+body {
+    display: grid;
+    grid-template-rows: 60px 1fr 60px;
+    grid-template-columns:  300px 1fr;
 }
 
-.cabecalho {
-    background-color: mediumvioletred;
+.icone-e-texto {
     display: flex;
-    justify-content: space-between;
-    line-height: 50px;
-    padding: 0 10px;
+    align-items: center;
 }
+
 
 .icone {
-    height: 20px;
-    width: 20px;
-    margin-right: 10px;
+    height: 30px;
+    width: 30px;
 }
 
-#titulo {
+
+header {
     display: flex;
-    align-items: center;
-}
-#titulo>img {
-    padding: 0;
-    margin-right: 10px;
-}
-
-#titulo>b {
-    font-size: larger;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    justify-content: left;
-    text-align: left;
-    padding: 5px;
-}
-
-.cabecalho>button {
-    height: 25px;
-    width: 50px;
-    margin-top: 10px;
-}
-
-.sidebar {
-    display: flex;
-    align-items: center;
+    background-color: mediumvioletred;
     justify-content: space-between;
-
+    height: 60px;
+    align-items: center;
+    padding: 0 20px;
+    grid-column: 1/-1;
 }
 
-main {
-    background-color: lightyellow;
-    flex-grow: 1;
-    display: flex;
-}
 
 nav {
-    width: 200px;
     background-color: #f2d0e0;
     padding: 10px;
 }
 
-.bolos {
-    background-color: white;
-    height: 500px;
-    display: grid;
-    grid-template-columns: 200px 1fr 1fr 1fr;
-    grid-template-rows: repeat(5, 1fr);
-    gap: 10px;
-    justify-items: center; 
+
+.botao-nav {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
+
+.card-produto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    box-shadow: 2px 2px 5px darkgray;
+}
+
+
+.imagem-card {
+    width: 100%;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 20px;
+}
+
+
 footer {
-    background-color: mediumvioletred;
-    color: black;
-    height: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 60px;
+    background-color: mediumvioletred;
+    grid-column: 1/-1;
+}
+
+h2, p {
+    padding: 12px;
 }
