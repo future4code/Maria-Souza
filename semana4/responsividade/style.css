@@ -1,0 +1,460 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+@font-face {
+    src: url(/images/Pacifico-Regular.ttf);
+    font-family: 'Pacifico-Regular';    
+    font-weight: normal;
+}
+
+
+@font-face {
+    src: url(/images/Poppins-SemiBold.ttf);
+    font-family: 'Poppins-SemiBold';    
+}
+
+
+@font-face {
+    src: url(/images/Poppins-Regular.ttf);
+    font-family: 'Poppins-Regular';    
+    font-weight: normal;
+}
+
+
+body {
+    display: grid;
+    grid-template-rows: 60px 1fr 60px;
+    grid-template-columns:  900px 1fr;
+    font-family: 'Poppins-Regular';
+}
+
+
+a {
+    text-decoration: none;
+    color: peru;
+
+}
+
+
+a:hover {
+    cursor: alias;
+    color: saddlebrown;
+}
+
+
+.icone-e-texto {
+    display: flex;
+    align-items: center;
+    font-family: 'Pacifico-Regular';
+}
+
+
+input {
+    border-radius: 10px;
+    border: 1px dotted gray;
+    text-align: center;
+    height: 20px;
+}
+
+
+.icone {
+    height: 30px;
+    width: 30px;
+}
+
+
+header {
+    display: flex;
+    background-color: #E37C3C;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+    padding: 0 20px;
+    grid-column: 1/-1;
+}
+
+
+#alinha-todos-pelo-amor-de-deus {
+    display: grid;
+    width: 1200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 40px;
+}
+
+
+.card-videos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px dashed #E37C3C;
+}
+
+
+.play {
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+}
+
+.play>video {
+    width: 60%;
+    height: 60%;
+}
+
+
+.card-videos>:link:hover {
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+}
+
+
+.imagem-card {
+    width: 100%;
+}
+
+
+.bold {
+    font-family: 'Poppins-SemiBold';
+}
+
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    background-color: #E37C3C;
+    grid-column: 1/-1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    font-family: 'Poppins-SemiBold';
+}
+
+
+h2, p {
+    padding: 12px;
+}
+
+
+.video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.canto {
+	position: absolute;
+    bottom: 50px;
+    left: 0px;
+    width: 50px;
+	}
+
+
+    
+/* Mobile  */
+@media screen and (min-device-width: 200px) and (max-device-width: 676px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        font-family: 'Poppins-Regular';
+    }    
+    
+    .icone-e-texto {
+        display: flex;
+        align-items: center;
+        font-family: 'Pacifico-Regular';
+        font-size: 1.5em;
+    }
+    
+    
+    input {
+        border-radius: 10px;
+        border: 1px dotted gray;
+        text-align: center;
+        height: 30px;
+        width: 80px;
+    }
+    
+    
+    .icone {
+        height: 40px;
+        width: 40px;
+    }
+    
+    
+    header {
+        display: flex;
+        background-color: #E37C3C;
+        justify-content: space-between;
+        height: 60px;
+        align-items: center;
+        padding: 0 20px;
+        grid-column: 1/-1;
+    }
+    
+    
+    #alinha-todos-pelo-amor-de-deus {
+        display: grid;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+    }
+    
+    
+    .card-videos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: 1px dashed #E37C3C;
+    }
+    
+    
+    .play {
+        display: flex;
+        justify-content: center;
+        width: 90vw;
+    }
+    
+    .play>video {
+        width: 80vw;
+        height: 50vw
+    }
+    
+    
+    .card-videos>:link:hover {
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+    }
+    
+    
+    .imagem-card {
+        width: 90vw;
+    }
+    
+    
+    .bold {
+        font-family: 'Poppins-SemiBold';
+        margin: 0;
+        padding: 20px;
+    }
+    
+    
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin: 10px;
+        justify-content: center;
+        align-items: center;
+        width: 90vw;
+    }
+    
+    
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        background-color: #E37C3C;
+        grid-column: 1/-1;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: fixed;
+        font-family: 'Poppins-SemiBold';
+    }
+    
+    
+    h2, p {
+        padding: 12px;
+    }
+    
+    
+    .video {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    
+    .canto {
+        position: fixed;
+        bottom: 50px;
+        left: 0px;
+        width: 50px;
+        }
+    
+}
+
+
+
+/* Screen  */
+@media screen and (min-width: 200px) and (max-width: 676px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        font-family: 'Poppins-Regular';
+    }    
+    
+    .icone-e-texto {
+        display: flex;
+        align-items: center;
+        font-family: 'Pacifico-Regular';
+        font-size: 1.5em;
+    }
+    
+    
+    input {
+        border-radius: 10px;
+        border: 1px dotted gray;
+        text-align: center;
+        height: 30px;
+        width: 80px;
+    }
+    
+    
+    .icone {
+        height: 40px;
+        width: 40px;
+    }
+    
+    
+    header {
+        display: flex;
+        background-color: #E37C3C;
+        justify-content: space-between;
+        height: 60px;
+        align-items: center;
+        padding: 0 20px;
+        grid-column: 1/-1;
+    }
+    
+    
+    #alinha-todos-pelo-amor-de-deus {
+        display: grid;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+    }
+    
+    
+    .card-videos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: 1px dashed #E37C3C;
+    }
+    
+    
+    .play {
+        display: flex;
+        justify-content: center;
+        width: 90vw;
+    }
+    
+    .play>video {
+        width: 80vw;
+        height: 50vw
+    }
+    
+    
+    .card-videos>:link:hover {
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+    }
+    
+    
+    .imagem-card {
+        width: 90vw;
+    }
+    
+    
+    .bold {
+        font-family: 'Poppins-SemiBold';
+        margin: 0;
+        padding: 20px;
+    }
+    
+    
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin: 10px;
+        justify-content: center;
+        align-items: center;
+        width: 90vw;
+    }
+    
+    
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        background-color: #E37C3C;
+        grid-column: 1/-1;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: fixed;
+        font-family: 'Poppins-SemiBold';
+    }
+    
+    
+    h2, p {
+        padding: 12px;
+    }
+    
+    
+    .video {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    
+    .canto {
+        position: fixed;
+        bottom: 50px;
+        left: 0px;
+        width: 50px;
+        }
+    
+}
