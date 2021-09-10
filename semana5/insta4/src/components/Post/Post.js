@@ -1,13 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import {IconeComContador} from '../IconeComContador/IconeComContador'
-
 import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
-import iconeAvatar from '../../img/avatar01.jpeg'
-import postUsuario from '../../img/post01.jpeg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
 
 const PostContainer = styled.div`
@@ -68,14 +64,15 @@ class Post extends React.Component {
 
   onClickComentario = () => {
     this.setState({
-      comentando: !this.state.comentando
+      comentando: !this.state.comentando,
     })
   }
+  
 
   aoEnviarComentario = () => {
     if (this.state.comentando){
       this.setState({
-        comentando: true,
+        comentando: false,
         numeroComentarios: this.state.numeroComentarios + 1
       })
     } 
@@ -100,11 +97,11 @@ class Post extends React.Component {
 
     return <PostContainer>
       <PostHeader>
-        <UserPhoto src={iconeAvatar} alt={'Imagem do usuario'}/>
+        <UserPhoto src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
         <p>{this.props.nomeUsuario}</p>
       </PostHeader>
 
-      <PostPhoto src={postUsuario} alt={'Imagem do post'}/>
+      <PostPhoto src={this.props.fotoPost} alt={'Imagem do post'}/>
 
       <PostFooter>
         <IconeComContador
