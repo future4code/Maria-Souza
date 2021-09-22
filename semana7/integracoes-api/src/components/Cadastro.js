@@ -1,5 +1,12 @@
 import React from "react"
 import styled from "styled-components"
+import axios from "axios"
+
+const headers = {
+  headers: {
+    Authorization: "maria-souza-maryam"
+  }
+}
 
 const MainContainer = styled.div `
   display: flex;
@@ -12,38 +19,64 @@ const MainContainer = styled.div `
     font-size: x-large;
   }
 
-  button {
-    margin: 10px;
-    border-radius: 0.5em;
-    border: 0.5px solid #405D5C;
-    padding: 0.3em 0.3em;
-  }
 `
 
 class Cadastro extends React.Component {
+  state = {
+    name: "",
+    email: ""
+  }
+
+  handleName = (event) => {
+    this.setState({ name: event.target.value })
+  }
+
+  handleEmail = (event) => {
+    this.setState({ email: event.target.value })
+  }
+
+  createUser = () => {
+    const url =
+      "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users"
+
+    const body = {
+      name: this.state.name,
+      email: this.state.email
+    }
+
+    axios
+      .post(url, body, headers)
+      .then((res) => {
+        this.setState({ name: "", email: "" })
+        alert('Usuário cadastrado com sucesso!')
+      })
+      .catch((err) => {
+        alert('Erro ao cadastrar! Tente novamente!')
+      })
+  }
 
 render() {
-
-    
     return (
         <MainContainer>
         <h3>Crie a sua conta</h3>
+
         <input
           placeholder="Nome"
-          value={this.props.name}
-          onChange={this.props.handleName}
+          value={this.state.name}
+          onChange={this.handleName}
         />
 
         <input
         placeholder="E-mail"
-        value={this.props.email}
-        onChange={this.props.handleEmail}
+        value={this.state.email}
+        onChange={this.handleEmail}
         />
         
-        <button onClick={this.props.createUser}>Enviar</button>
+        <button onClick={this.createUser}>Enviar</button>
+
+        <button onClick={this.props.irParaLista}>Lista de Usuários</button>
         </MainContainer>
     )
     }
 }
-
 export default Cadastro;
