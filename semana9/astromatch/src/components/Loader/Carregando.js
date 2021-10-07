@@ -8,11 +8,6 @@ const DivLoader = styled.div `
   justify-content: center;
   align-items: center;
   background-color: #f3f3fb;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
 `
 
 export default class Carregando extends React.Component {

@@ -1,15 +1,43 @@
+import React, { useState } from 'react'
 import { Caixinha, MainContainer } from './EstiloApp'
 import Logo from './components/imgs/logo.png'
+import TelaMatch from './components/TelaMatch/TelaMatch'
+import TelaPerfil from './components/TelaPerfil/TelaPerfil'
 
-function App() {
-  return (
-    <MainContainer>
-      <img src={Logo} alt="" />
-      <Caixinha>
-      Mussum Ipsum, cacilds vidis litro abertis. Per aumento de cachacis, eu reclamis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Diuretics paradis num copo é motivis de denguis. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.
-      </Caixinha>
-    </MainContainer>
-  );
+  const App = () => {
+    const [pagina, setPagina] = useState("matches")
+
+  const mudaPagina = (pagina) => {
+    setPagina(pagina)
 }
 
-export default App;
+  const qualPagina = () => {
+    switch (pagina) {
+      case "matches":
+        return (
+        <TelaMatch
+          mudaPagina={(pagina) => mudaPagina(pagina)} />)
+      case "perfil":
+        return (
+        <TelaPerfil 
+        mudaPagina={(pagina) => mudaPagina(pagina)}/>)
+      default:
+        return <b>Erro! Tente novamente.</b>
+    }
+  }
+
+  const escolhePagina = qualPagina()  
+
+  return (
+    <MainContainer>
+       <img src={Logo} alt="" />
+     <Caixinha>
+       <button onClick={()=>mudaPagina("perfil")}>Matches</button>
+       <button onClick={()=>mudaPagina("matches")}>Home</button>
+          {escolhePagina}
+        </Caixinha>
+    </MainContainer>
+  )
+}
+
+export default App
