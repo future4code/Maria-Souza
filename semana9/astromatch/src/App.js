@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Caixinha, MainContainer } from './EstiloApp'
+import { AlinhaBotoes, Caixinha, MainContainer } from './EstiloApp'
 import Logo from './components/imgs/logo.png'
 import TelaMatch from './components/TelaMatch/TelaMatch'
 import TelaPerfil from './components/TelaPerfil/TelaPerfil'
@@ -30,10 +30,12 @@ import TelaPerfil from './components/TelaPerfil/TelaPerfil'
 
   return (
     <MainContainer>
-       <img src={Logo} alt="" />
+       <img src={Logo} alt="Logotipo" />
      <Caixinha>
-       <button onClick={()=>mudaPagina("perfil")}>Matches</button>
-       <button onClick={()=>mudaPagina("matches")}>Home</button>
+       <AlinhaBotoes>
+       <button onClick={()=>mudaPagina("perfil")}>Meus matches</button>
+       <button onClick={()=>mudaPagina("matches")}>Voltar</button>
+       </AlinhaBotoes>
           {escolhePagina}
         </Caixinha>
     </MainContainer>

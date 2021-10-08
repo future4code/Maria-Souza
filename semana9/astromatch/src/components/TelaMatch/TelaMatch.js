@@ -1,18 +1,9 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
-import styled from "styled-components"
+import Yes from '../imgs/yes.png'
+import No from '../imgs/no.png'
+import { Aceitar,  BotoesCoracao,  Recusar, ContainerTela } from "./EstiloTelaMatch"
 
-
-const Estiliza = styled.div `
-    img {
-        width: 120px;
-    }
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-`
 export default function TelaMatch(props) {
     
       const [listaDePerfis, setListaDePerfis] = useState({})
@@ -52,20 +43,23 @@ export default function TelaMatch(props) {
      
      const renderizarTela = () => {
               return (
-                  <div>
+              <ContainerTela>
               Nome: {listaDePerfis.name}<br/>
               Idade: {listaDePerfis.age}<br/>
-              Descrição: {listaDePerfis.bio}<br/>
-              <img src={listaDePerfis.photo} alt="Foto do perfil"/><br/>
-              <button option="false" onClick={()=> darMatch(false)}>Recusar</button><br/>
-              <button option="true" onClick={()=> darMatch(true)}>Aceitar</button>
-                  </div>
+              Descrição: {listaDePerfis.bio}<br/><br/>
+              <img src={listaDePerfis.photo} alt="Foto do perfil"/>
+              <BotoesCoracao>
+              <Recusar option="false" onClick={()=> darMatch(false)}><img src={No} alt="" /></Recusar>
+              <Aceitar option="true" onClick={()=> darMatch(true)}><img src={Yes} alt=""/></Aceitar>
+              </BotoesCoracao>
+              
+              </ContainerTela>
               )
       }
       return (
-          <Estiliza>
+          <div>
               {renderizarTela()}
-          </Estiliza>
+            </div>
       )
             }
 
