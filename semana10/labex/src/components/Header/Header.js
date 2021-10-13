@@ -5,9 +5,8 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import FlightRoundedIcon from '@mui/icons-material/FlightRounded';
+import Logo from '../../imgs/logo.png'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -56,22 +55,30 @@ export default function SearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{backgroundColor: '#482880'}}>
         <Toolbar>
-          <FlightRoundedIcon
-            size="large"
-            edge="start"
-            color="inherit"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </FlightRoundedIcon>
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ flexGrow: 2, display: { xs: '2em', sm: '2em' } }}
           >
-            LabeX
+            <a
+            href="/" 
+            rel="noreferrer" 
+            >
+            <img src={Logo}
+            alt="Logotipo" 
+             />
+             </a>
+            
           </Typography>
+          <Typography
+            variant="h5"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 2, display: { xs: 'none', sm: 'block' } }}
+          >
+            Viagens espaciais a preços módicos.
+            </Typography>
           <Search
           sx={{display: { xs: 'none', sm: 'block'}}}>
             <SearchIconWrapper>

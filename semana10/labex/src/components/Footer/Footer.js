@@ -7,9 +7,15 @@ import Paper from '@mui/material/Paper'
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined'
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded'
 import LocalPhoneRoundedIcon from '@mui/icons-material/LocalPhoneRounded'
+import { styled } from '@mui/material/styles'
 
+const IconsAtBottom = styled(BottomNavigationAction)(({ theme }) => ({
+  '&.Mui-selected, &.css-18gz5c0-MuiButtonBase-root-MuiBottomNavigationAction-root': {
+    color: '#FFFFFF'
+  }
+}))
 
-export default function FixedBottomNavigation() {
+export default function Footer() {
   const [value, setValue] = React.useState(0)
   const ref = React.useRef(null)
     
@@ -19,14 +25,15 @@ export default function FixedBottomNavigation() {
       <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
         <BottomNavigation
           showLabels
+          sx={{backgroundColor: '#482880'}}
           value={value}
           onChange={(event, newValue) => {
             setValue(newValue)
           }}
         >
-          <BottomNavigationAction sx={{ color: '#512da8' }} href="http://www.facebook.com" target="_blank" label="@LabeX" icon={<FacebookOutlinedIcon />} />
-          <BottomNavigationAction sx={{ color: '#512da8' }} label="R. João Augusto, 27 - Rio de Janeiro" icon={<HomeRoundedIcon />} />
-          <BottomNavigationAction sx={{ color: '#512da8' }} label="(21) 34568-2134" icon={<LocalPhoneRoundedIcon />} />
+          <IconsAtBottom sx={{ color: '#FFFFFF' }} href="http://www.facebook.com" target="_blank" label="@LabeX" icon={<FacebookOutlinedIcon />} />
+          <IconsAtBottom sx={{ color: '#FFFFFF' }} label="R. João Augusto, 27 - Rio de Janeiro" icon={<HomeRoundedIcon />} />
+          <IconsAtBottom sx={{ color: '#FFFFFF' }} label="(21) 34568-2134" icon={<LocalPhoneRoundedIcon />} />
         </BottomNavigation>
       </Paper>
     </Box>
