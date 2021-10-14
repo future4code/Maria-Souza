@@ -1,5 +1,7 @@
 import styledComponentsCjs from "styled-components"
 import React from "react"
+import { useProtectedPage } from '../components/Hooks/useProtectedPage'
+
 
 const Testando = styledComponentsCjs.div `
     display: flex;
@@ -11,6 +13,7 @@ const Testando = styledComponentsCjs.div `
 `
 
 export const CreateTripPage = () => {
+    useProtectedPage()
     return (
     <Testando>
     

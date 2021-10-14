@@ -1,5 +1,10 @@
 import styledComponentsCjs from "styled-components"
 import React from "react"
+// import { useHistory } from "react-router-dom"
+// import axios from "axios"
+// import { useState } from "react"
+// import { useEffect } from "react"
+import { useProtectedPage } from '../components/Hooks/useProtectedPage'
 
 const Testando = styledComponentsCjs.div `
     display: flex;
@@ -11,6 +16,8 @@ const Testando = styledComponentsCjs.div `
 `
 
 export const AdminHomePage = () => {
+    useProtectedPage()
+
     return (
     <Testando>
     
