@@ -5,7 +5,6 @@ import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded'
 import ControlPointDuplicateRoundedIcon from '@mui/icons-material/ControlPointDuplicateRounded'
 import Cards from '../components/Cards/Cards'
 import React from 'react'
-import useProtectedPage from '../components/Hooks/useProtectedPage'
 
 const Buttons = styled(Button)(({ theme }) => ({
     '&.Mui-selected, &.css-18gz5c0-MuiButtonBase-root-MuiBottomNavigationAction-root, &:hover': {
@@ -42,8 +41,6 @@ const ContainerCards = styledComponentsCjs.div `
 `
 
 export const ListTripsPage = () => {
-    useProtectedPage()
-
     return (
     <Container>
     

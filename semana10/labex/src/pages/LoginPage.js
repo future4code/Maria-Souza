@@ -6,8 +6,8 @@ import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded'
 import LoginRoundedIcon from '@mui/icons-material/LoginRounded'
 import TextField from '@mui/material/TextField'
 import { useHistory } from "react-router-dom"
-import axios from "axios"
 import { useState } from "react"
+import axios from "axios"
 
 const Buttons = styled(Button)(({ theme }) => ({
     '&.Mui-selected, &.css-18gz5c0-MuiButtonBase-root-MuiBottomNavigationAction-root, &:hover': {
@@ -68,30 +68,36 @@ const Cabecalho = styledComponentsCjs.div `
   width: 6rem;
 `
 
+// const inputProps = {
+//   pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$',
+// };
+
 export const LoginPage = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-
   const history = useHistory()
-
-  const handleEmail = (event) => {
-    setEmail(event.target.value)
-  }
-  const handlePassword = (event) => {
-    setPassword(event.target.value)
-  }
   const goBack = () => {
     history.goBack()
   }
 
-  const submitLogin = () => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const url = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/maria-souza-maryam/login"
+
+  const onChangeEmail = (event) => {
+    setEmail(event.target.value)
+  }
+  const onChangePassword = (event) => {
+    setPassword(event.target.value)
+  }
+
+  const submitLogin = (event) => {
+    event.preventDefault()
     const body = {
       email: email,
       password: password
     }
     axios
       .post(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labeX/maria-souza-maryam/login",
+        url,
         body
       )
       .then((res) => {
@@ -110,26 +116,29 @@ export const LoginPage = () => {
         </Cabecalho>
 
         <ContainerLogin>
+          <form>
         <Inputs
           required
           id="outlined-required"
           label="E-mail"
           type="email"
           value={email}
-          onChange={handleEmail}
+          onChange={onChangeEmail}
           color="secondary"
+          // inputProps={inputProps}
+          title="Digite um e-mail válido."
         />
-
         <Inputs
           required
           id="outlined-password-input"
           label="Senha"
           value={password}
-          onChange={handlePassword}
+          onChange={onChangePassword}
           type="password"
           color="secondary"
           autoComplete="current-password"
         />
+        </form>
         </ContainerLogin>
 
         <ContainerButtons>

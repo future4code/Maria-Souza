@@ -5,43 +5,47 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
 
+
 const CardStyle = styled(CardContent)(({ theme }) => ({
     backgroundColor: '#673ab7',
     color: '#FFFFFF',
     fontFamily: 'Roboto'
   }))
 
-const card = (
+const card = (props) => (
   <React.Fragment>
     <CardStyle>
       <Typography sx={{ fontSize: 16 }}>
-        <b>Nome:</b> <i>Viagem de verão</i>
+        <b>Nome:</b> {props.trip.name}
       </Typography>
 
       <Typography sx={{ fontSize: 16 }}>
-      <b>Descrição:</b> <i>Vénus ou Vênus é o segundo planeta do Sistema Solar em ordem de distância a partir do Sol, orbitando-o a cada 224,7 dias. Recebeu seu nome em homenagem à deusa romana do amor e da beleza Vénus, equivalente a Afrodite.</i>
+      <b>Descrição:</b> <i>{props.trip.description}</i>
       </Typography>
 
       <Typography sx={{ fontSize: 16 }}>
-      <b>Planeta:</b> <i>Vênus</i>
+      <b>Planeta:</b> <i>{props.trip.planet}</i>
       </Typography>
 
       <Typography sx={{ fontSize: 16 }}>
-      <b>Duração:</b> <i>51</i>
+      <b>Duração:</b> <i>{props.trip.durationInDays}</i>
       </Typography>
 
       <Typography sx={{ fontSize: 16 }}>
-      <b>Data:</b> <i>2021-10-21</i>
+      <b>Data:</b> <i>{props.trip.date}</i>
       </Typography>
       
     </CardStyle>
   </React.Fragment>
 )
 
-export default function Cards() {
+const Cards = () => {
+
   return (
     <Box sx={{ minWidth: 275, maxWidth: 370 }}>
       <Card variant="outlined">{card}</Card>
     </Box>
   )
 }
+
+export default Cards
