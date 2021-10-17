@@ -19,13 +19,20 @@ const Buttons = styled(Button)(({ theme }) => ({
   }))
 
   const Inputs = styled(TextField)(({ theme }) => ({
-    '&:hover': {
-      borderBox: 'purple',
-
-    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: '#482880',
+      },
+      '&:hover fieldset': {
+        borderColor: 'black',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'black',
+      }},
     margin: '0.6rem',
-    borderRadius: '1rem',
-    border: '#482880'
+    borderRadius: '0.5rem',
+    border: '#FFFFFF',
+    backgroundColor: '#FFFFFF'
   }))
 
   const Container = styledComponentsCjs.div `
@@ -51,10 +58,10 @@ const ContainerLogin = styledComponentsCjs.div `
     justify-content: center;
     align-items: center;
     margin-top: 3rem;
-    background-color: #d9c9f5;
+    background-color: #673ab7;
     width: 15rem;
-    height: 10.5rem;
     border-radius: 2rem;
+    padding: 2rem;
 `
 
 const Cabecalho = styledComponentsCjs.div `
@@ -68,9 +75,9 @@ const Cabecalho = styledComponentsCjs.div `
   width: 6rem;
 `
 
-// const inputProps = {
-//   pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$',
-// };
+const inputProps = {
+  pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$'
+}
 
 export const LoginPage = () => {
   const history = useHistory()
@@ -105,7 +112,7 @@ export const LoginPage = () => {
         history.push('/admin')
       })
       .catch((err) => {
-        window.alert("Ocorreu um erro! Tente novamente.")
+        window.alert("Digite um e-mail ou senha válidos.")
       })
   }
 
@@ -120,23 +127,19 @@ export const LoginPage = () => {
         <Inputs
           required
           id="outlined-required"
-          label="E-mail"
+          placeholder="E-mail"
           type="email"
           value={email}
           onChange={onChangeEmail}
-          color="secondary"
-          // inputProps={inputProps}
-          title="Digite um e-mail válido."
+          inputProps={inputProps}
         />
         <Inputs
           required
           id="outlined-password-input"
-          label="Senha"
+          placeholder="Senha"
           value={password}
           onChange={onChangePassword}
           type="password"
-          color="secondary"
-          autoComplete="current-password"
         />
         </form>
         </ContainerLogin>

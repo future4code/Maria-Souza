@@ -9,41 +9,46 @@ import { styled } from '@mui/material/styles'
 const CardStyle = styled(CardContent)(({ theme }) => ({
     backgroundColor: '#673ab7',
     color: '#FFFFFF',
-    fontFamily: 'Roboto'
+    fontFamily: 'Roboto',
+    borderRadius: '1rem',
+    width: '20rem',
+    margin: '0.5rem'
   }))
 
-const card = (props) => (
+ const Cards = (props) => {
+
+  return (
   <React.Fragment>
     <CardStyle>
       <Typography sx={{ fontSize: 16 }}>
-        <b>Nome:</b> {props.trip.name}
+        <b>Nome:</b> {props.trips.name}
       </Typography>
 
       <Typography sx={{ fontSize: 16 }}>
-      <b>Descrição:</b> <i>{props.trip.description}</i>
+      <b>Descrição:</b> <i>{props.trips.description}</i>
       </Typography>
 
       <Typography sx={{ fontSize: 16 }}>
-      <b>Planeta:</b> <i>{props.trip.planet}</i>
+      <b>Planeta:</b> <i>{props.trips.planet}</i>
       </Typography>
 
       <Typography sx={{ fontSize: 16 }}>
-      <b>Duração:</b> <i>{props.trip.durationInDays}</i>
+      <b>Duração:</b> <i>{props.trips.durationInDays}</i>
       </Typography>
 
       <Typography sx={{ fontSize: 16 }}>
-      <b>Data:</b> <i>{props.trip.date}</i>
+      <b>Data:</b> <i>{props.trips.date}</i>
       </Typography>
       
     </CardStyle>
   </React.Fragment>
-)
+)}
 
-const Cards = () => {
+ const render = () => {
 
   return (
-    <Box sx={{ minWidth: 275, maxWidth: 370 }}>
-      <Card variant="outlined">{card}</Card>
+  <Box sx={{ minWidth: 275, maxWidth: 370 }}>
+      <Card variant="outlined">{Cards}</Card>
     </Box>
   )
 }

@@ -2,9 +2,13 @@ import styledComponentsCjs from "styled-components"
 import { Button } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded'
-import ControlPointDuplicateRoundedIcon from '@mui/icons-material/ControlPointDuplicateRounded'
-import Cards from '../components/Cards/Cards'
+import CreateRoundedIcon from '@mui/icons-material/CreateRounded';import Cards from '../components/Cards/Cards'
 import React from 'react'
+import { useHistory } from "react-router"
+import { useProtectedPage } from '../components/Hooks/useProtectedPage'
+import { useState } from "react"
+import { useEffect } from "react"
+import axios from "axios"
 
 const Buttons = styled(Button)(({ theme }) => ({
     '&.Mui-selected, &.css-18gz5c0-MuiButtonBase-root-MuiBottomNavigationAction-root, &:hover': {
@@ -41,6 +45,32 @@ const ContainerCards = styledComponentsCjs.div `
 `
 
 export const ListTripsPage = () => {
+  useProtectedPage()
+
+  const [trips, setTrips] = useState([])
+  const url = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/maria-souza-maryam/trips"
+  const history = useHistory()
+  const goBack = () => {
+    history.goBack()
+  }
+
+  const getTrips = () => {
+    axios
+    .get(url)
+    .then((res) => {
+        setTrips(res.data.trips)
+        console.log(res.data.trips)
+    })
+    .catch((err) => {
+        window.alert("Ocorreu um erro! Tente novamente.")
+    })
+}
+
+  useEffect(() => {
+    getTrips()
+  }, [history])
+
+
     return (
     <Container>
     
@@ -48,7 +78,7 @@ export const ListTripsPage = () => {
         <Buttons 
         variant="contained"
         size="large"
-        // onClick={goToTrips}
+        onClick={goBack}
         endIcon={<ArrowBackRoundedIcon />}>
         Voltar
         </Buttons>
@@ -57,13 +87,15 @@ export const ListTripsPage = () => {
         variant="contained"
         size="large"
         // onClick={goToLogin}
-        endIcon={<ControlPointDuplicateRoundedIcon />}>
+        endIcon={<CreateRoundedIcon />}>
         Inscreva-se
         </Buttons>
         </ContainerButtons>
 
         <ContainerCards>
-            <Cards />
+        {trips.map((trips) => {
+          return <Cards trips={trips}/>
+                })}
         </ContainerCards>
     
     </Container>

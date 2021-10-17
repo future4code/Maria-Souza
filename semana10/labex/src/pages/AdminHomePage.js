@@ -42,10 +42,22 @@ const ContainerTrips = styledComponentsCjs.div `
     justify-content: center;
     align-items: center;
     margin-top: 3rem;
-    background-color: #d9c9f5;
+    background-color: #673ab7;
     width: 15rem;
-    height: 10.5rem;
     border-radius: 2rem;
+    padding: 1rem;
+
+    a {
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #8561c5;
+      transition: 500ms;
+    }
+    a:active {
+      color: #000000;
+    }
 `
 
 const Cabecalho = styledComponentsCjs.div `
