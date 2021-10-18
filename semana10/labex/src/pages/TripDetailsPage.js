@@ -41,24 +41,6 @@ export const TripDetailsPage = () => {
         getTripDetails()
     }, [])
 
-    const decideCandidate = (approve, candidateId) => {
-        const body = {
-            approve: approve
-        }
-        axios
-        .put(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/maria-souza-maryam/trips/${params.tripId}/candidates/${candidateId}/decide`, body, {
-            headers: {
-                'Content-Type': 'application/json',
-                auth: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImhUYjlZd0pGZnA1bmtOMU5RVU43IiwiZW1haWwiOiJhc3Ryb2RldkBnbWFpbC5jb20uYnIiLCJpYXQiOjE2MzQyMTQ1NjV9._1s5hkHP3n98zImoZkSI__4kOKhe7zGBcHveUbFi7NY'
-            }
-        })
-        .then((res) => {
-            getTripDetails()
-        })
-        .catch((err) =>
-            window.alert("Ocorreu um erro! Tente novamente."))
-    }
-
     return (        
     <Container>
         
