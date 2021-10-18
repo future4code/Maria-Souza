@@ -1,78 +1,14 @@
-import styledComponentsCjs from "styled-components"
 import React from "react"
-import { Button } from '@mui/material'
-import { styled } from '@mui/material/styles'
+import Buttons from '../components/Styles/Buttons'
 import { useProtectedPage } from '../components/Hooks/useProtectedPage'
 import axios from "axios"
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded'
 import AddCircleOutlineRoundedIcon from '@mui/icons-material/AddCircleOutlineRounded'
 import { useHistory } from 'react-router-dom'
 import { useState } from "react"
-// import TextField from '@mui/material/TextField'
-
-
-const Buttons = styled(Button)(({ theme }) => ({
-    '&.Mui-selected, &.css-18gz5c0-MuiButtonBase-root-MuiBottomNavigationAction-root, &:hover': {
-      color: '#FFFFFF',
-      backgroundColor: '#673ab7'
-    },
-    backgroundColor: '#482880',
-    margin: '1rem'
-  }))
-
-  // const Inputs = styled(TextField)(({ theme }) => ({
-  //   '&:hover': {
-  //     borderBox: 'purple',
-
-  //   },
-  //   margin: '0.6rem',
-  //   borderRadius: '1rem',
-  //   border: '#482880'
-  // }))
-
-  const Container = styledComponentsCjs.div `
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  max-width: 100%;
-`
-
-const ContainerButtons = styledComponentsCjs.div `
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 3rem;
-`
-
-const ContainerTrips = styledComponentsCjs.div `
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 3rem;
-    padding: 2rem;
-    background-color: #673ab7;
-    width: 15rem;
-    border-radius: 2rem;
-`
-
-const Cabecalho = styledComponentsCjs.div `
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  margin-top: 3rem;
-  background-color:white;
-  width: 20rem;
-
-  h1 {
-      line-height: 1.5rem;
-  }
-`
+import CreateTrip from '../imgs/createtrip.png'
+import { Container, ContainerButtons, ContainerTrips, ContainerCabecalho, InputForm } from '../components/Styles/StyleCreateTripPage'
+import { planets } from "../constants/Planets"
 
 export function CreateTripPage() {
   const [name, setName] = useState("")
@@ -119,8 +55,7 @@ export function CreateTripPage() {
       'Content-Type': 'application/json',
       auth: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImhUYjlZd0pGZnA1bmtOMU5RVU43IiwiZW1haWwiOiJhc3Ryb2RldkBnbWFpbC5jb20uYnIiLCJpYXQiOjE2MzQyMTQ1NjV9._1s5hkHP3n98zImoZkSI__4kOKhe7zGBcHveUbFi7NY'
     }
-  }
-    
+  } 
 
   const goToCreateNewTrip = () => {
     const body = {
@@ -141,78 +76,63 @@ export function CreateTripPage() {
       })
   }
 
-  const planets = [
-    "Mercúrio",
-    "Vênus",
-    "Terra",
-    "Marte",
-    "Jupiter",
-    "Saturno",
-    "Urano",
-    "Netuno",
-    "Plutão"
-  ]
-
-
   return (
     <Container>
-      <Cabecalho>
-        <h1>Criar viagem</h1>
-      </Cabecalho>
+      <ContainerCabecalho>
+        <img
+        src={CreateTrip}
+        alt="Criar viagem"
+        />
+      </ContainerCabecalho>
 
       <ContainerTrips>
-        <form>
-          <input
-            placeholder={"Nome"}
+          <InputForm
+            required
             name={"name"}
+            placeholder={"Nome da viagem"}
             value={name}
             onChange={handleName}
             pattern={"^.{5,}$"}
-            title={"O nome da viagem deve ter no mínimo 5 caracteres"}
-            required />
+            title={"O nome da sua viagem deve ter no mínimo 5 letras."}
+             />
 
           <select
-            placeholder={"Planeta"}
+            required
             name={"planet"}
             defaultValue={""}
             onChange={handlePlanet}
-            required
           >
-            <option value={""} disabled>Escolha um Planeta</option>
+            <option value={""} disabled>Escolha um planeta</option>
             {planets.map((planet) => {
               return <option value={planet} key={planet}>{planet}</option>
             })}
           </select>
 
-          <input
-            placeholder={"Data"}
+          <InputForm
+            required
             type={"date"}
             name={"date"}
             value={date}
             onChange={handleDate}
-            required
             min={chooseToday} />
 
-          <input
+          <InputForm
+            required
             placeholder={"Descrição"}
             name={"description"}
             value={description}
             onChange={handleDescription}
-            required
             pattern={"^.{30,}$"}
-            title={"O nome deve ter no mínimo 30 caracteres"} />
+            title={"Sua descrição precisa ter no mínimo 30 letras."} />
 
-          <input
-            placeholder={"Duração em dias"}
+          <InputForm
+            required
+            placeholder={"Duração (em dias)"}
             type={"number"}
             name={"durationInDays"}
             value={durationInDays}
             onChange={handleDurationInDays}
-            required
             min={50} />
-
-
-        </form>
       </ContainerTrips>
 
       <ContainerButtons>

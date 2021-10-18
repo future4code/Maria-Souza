@@ -30,7 +30,7 @@ export default function Footer() {
           onChange={(event, newValue) => {
             setValue(newValue)
           }}
-        >
+          >
           <IconsAtBottom sx={{ color: '#FFFFFF' }} href="http://www.facebook.com" target="_blank" label="@LabeX" icon={<FacebookOutlinedIcon />} />
           <IconsAtBottom sx={{ color: '#FFFFFF' }} label="R. João Augusto, 27 - Rio de Janeiro" icon={<HomeRoundedIcon />} />
           <IconsAtBottom sx={{ color: '#FFFFFF' }} label="(21) 34568-2134" icon={<LocalPhoneRoundedIcon />} />

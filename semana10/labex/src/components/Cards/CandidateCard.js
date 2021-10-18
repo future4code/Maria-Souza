@@ -5,39 +5,37 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
 
-
 const CardStyle = styled(CardContent)(({ theme }) => ({
     backgroundColor: '#673ab7',
     color: '#FFFFFF',
     fontFamily: 'Roboto',
     borderRadius: '1rem',
-    width: '20rem',
     margin: '0.5rem'
   }))
 
- const Cards = (props) => {
+ const CandidateCard = (props) => {
 
   return (
   <React.Fragment>
     <CardStyle>
       <Typography sx={{ fontSize: 16 }}>
-        <b>Nome:</b> <i>{props.trips.name}</i>
+        <b>Nome:</b> <i>{props.candidates.name}</i>
       </Typography>
 
       <Typography sx={{ fontSize: 16 }}>
-      <b>Descrição:</b> <i>{props.trips.description}</i>
+      <b>Idade:</b> <i>{props.candidates.age}</i>
       </Typography>
 
       <Typography sx={{ fontSize: 16 }}>
-      <b>Planeta:</b> <i>{props.trips.planet}</i>
+      <b>País:</b> <i>{props.candidates.country}</i>
       </Typography>
 
       <Typography sx={{ fontSize: 16 }}>
-      <b>Duração:</b> <i>{props.trips.durationInDays}</i>
+      <b>Profissão:</b> <i>{props.candidates.profession}</i>
       </Typography>
 
       <Typography sx={{ fontSize: 16 }}>
-      <b>Data:</b> <i>{props.trips.date}</i>
+      <b>Motivo do interesse:</b> <i>{props.candidates.applicationText}</i>
       </Typography>
       
     </CardStyle>
@@ -48,9 +46,9 @@ const CardStyle = styled(CardContent)(({ theme }) => ({
 
   return (
   <Box sx={{ minWidth: 275, maxWidth: 370 }}>
-      <Card variant="outlined">{Cards}</Card>
+      <Card variant="outlined">{CandidateCard}</Card>
     </Box>
   )
 }
 
-export default Cards
+export default CandidateCard

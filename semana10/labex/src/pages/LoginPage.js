@@ -1,84 +1,13 @@
-import styledComponentsCjs from "styled-components"
 import React from "react"
-import { Button } from '@mui/material'
-import { styled } from '@mui/material/styles'
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded'
 import LoginRoundedIcon from '@mui/icons-material/LoginRounded'
-import TextField from '@mui/material/TextField'
 import { useHistory } from "react-router-dom"
 import { useState } from "react"
 import axios from "axios"
-
-const Buttons = styled(Button)(({ theme }) => ({
-    '&.Mui-selected, &.css-18gz5c0-MuiButtonBase-root-MuiBottomNavigationAction-root, &:hover': {
-      color: '#FFFFFF',
-      backgroundColor: '#673ab7'
-    },
-    backgroundColor: '#482880',
-    margin: '1rem'
-  }))
-
-  const Inputs = styled(TextField)(({ theme }) => ({
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: '#482880',
-      },
-      '&:hover fieldset': {
-        borderColor: 'black',
-      },
-      '&.Mui-focused fieldset': {
-        borderColor: 'black',
-      }},
-    margin: '0.6rem',
-    borderRadius: '0.5rem',
-    border: '#FFFFFF',
-    backgroundColor: '#FFFFFF'
-  }))
-
-  const Container = styledComponentsCjs.div `
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  max-width: 100%;
-`
-
-const ContainerButtons = styledComponentsCjs.div `
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 3rem;
-`
-
-const ContainerLogin = styledComponentsCjs.div `
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3rem;
-    background-color: #673ab7;
-    width: 15rem;
-    border-radius: 2rem;
-    padding: 2rem;
-`
-
-const Cabecalho = styledComponentsCjs.div `
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  margin-top: 3rem;
-  background-color:white;
-  width: 6rem;
-`
-
-const inputProps = {
-  pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$'
-}
-
+import Buttons from '../components/Styles/Buttons'
+import { Container, ContainerButtons, ContainerLogin, ContainerCabecalho, InputStyle } from '../components/Styles/StyleLoginPage'
+import Login from '../imgs/login.png'
+ 
 export const LoginPage = () => {
   const history = useHistory()
   const goBack = () => {
@@ -89,10 +18,10 @@ export const LoginPage = () => {
   const [password, setPassword] = useState('')
   const url = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/maria-souza-maryam/login"
 
-  const onChangeEmail = (event) => {
+  const handleEmail = (event) => {
     setEmail(event.target.value)
   }
-  const onChangePassword = (event) => {
+  const handlePassword = (event) => {
     setPassword(event.target.value)
   }
 
@@ -118,30 +47,31 @@ export const LoginPage = () => {
 
     return (
     <Container>
-      <Cabecalho>
-        <h1>Login</h1>
-        </Cabecalho>
+      <ContainerCabecalho>
+        <img
+        src={Login}
+        alt="Login"
+        />
+        </ContainerCabecalho>
 
         <ContainerLogin>
-          <form>
-        <Inputs
+        <InputStyle
           required
-          id="outlined-required"
           placeholder="E-mail"
           type="email"
           value={email}
-          onChange={onChangeEmail}
-          inputProps={inputProps}
+          onChange={handleEmail}
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          title="Digite um e-mail válido."
         />
-        <Inputs
+        <InputStyle
           required
           id="outlined-password-input"
           placeholder="Senha"
           value={password}
-          onChange={onChangePassword}
+          onChange={handlePassword}
           type="password"
         />
-        </form>
         </ContainerLogin>
 
         <ContainerButtons>

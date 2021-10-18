@@ -15,29 +15,29 @@ const CardStyle = styled(CardContent)(({ theme }) => ({
     margin: '0.5rem'
   }))
 
- const Cards = (props) => {
+ const TripCardDetails = (props) => {
 
   return (
   <React.Fragment>
     <CardStyle>
       <Typography sx={{ fontSize: 16 }}>
-        <b>Nome:</b> <i>{props.trips.name}</i>
+        <b>Nome:</b> <i>{props.trip.name}</i>
       </Typography>
 
       <Typography sx={{ fontSize: 16 }}>
-      <b>Descrição:</b> <i>{props.trips.description}</i>
+      <b>Descrição:</b> <i>{props.trip.description}</i>
       </Typography>
 
       <Typography sx={{ fontSize: 16 }}>
-      <b>Planeta:</b> <i>{props.trips.planet}</i>
+      <b>Planeta:</b> <i>{props.trip.planet}</i>
       </Typography>
 
       <Typography sx={{ fontSize: 16 }}>
-      <b>Duração:</b> <i>{props.trips.durationInDays}</i>
+      <b>Duração:</b> <i>{props.trip.durationInDays}</i>
       </Typography>
 
       <Typography sx={{ fontSize: 16 }}>
-      <b>Data:</b> <i>{props.trips.date}</i>
+      <b>Data:</b> <i>{props.trip.date}</i>
       </Typography>
       
     </CardStyle>
@@ -48,9 +48,9 @@ const CardStyle = styled(CardContent)(({ theme }) => ({
 
   return (
   <Box sx={{ minWidth: 275, maxWidth: 370 }}>
-      <Card variant="outlined">{Cards}</Card>
+      <Card variant="outlined">{TripCardDetails}</Card>
     </Box>
   )
 }
 
-export default Cards
+export default TripCardDetails
