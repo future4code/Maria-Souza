@@ -15,7 +15,7 @@ const useRequestData = (initialData, url) => {
         setData(res.data)
       })
       .catch((err) => {
-        window.alert("Ocorreu um erro! Tente novamente.")
+        window.alert("Faça login ou crie uma conta para visualizar as receitas!")
       })
   }, [url])
 
