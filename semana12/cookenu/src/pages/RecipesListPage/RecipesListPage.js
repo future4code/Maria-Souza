@@ -8,6 +8,7 @@ import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded'
 import RecipesLogo from '../../assets/recipes.png'
 import { goToAddRecipes, goToRecipeDetail } from "../../routes/Coordinator"
 import { useHistory } from 'react-router-dom'
+import Loading from '../../components/Loading/Loading'
 
 const RecipesListPage = () => {
     const recipes = useRequestData([], `${BASE_URL}/recipe/feed`)
@@ -35,7 +36,7 @@ const RecipesListPage = () => {
             <img src={RecipesLogo} alt="Receitas" />
             </AlignLogo>
         <RecipeListContainer>
-            {recipeCards}
+            {recipeCards.length > 0 ? recipeCards : <Loading />}
         <AddRecipeButton
             color={"primary"}
             onClick={() => goToAddRecipes(history)}

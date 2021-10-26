@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useState } from "react"
 import { ScreenContainer, InputContainer } from "./Styled"
 import TextField from '@mui/material/TextField'
 import useForm from '../../hooks/useForm'
@@ -7,7 +7,7 @@ import SendRoundedIcon from '@mui/icons-material/SendRounded'
 import { login } from '../../services/User'
 import { useHistory } from 'react-router-dom'
 import useUnprotectedPage from '../../hooks/useUnprotectedPage'
-
+import CircularProgress from '@mui/material/CircularProgress'
 
 const LoginForm = ({setRightButtonText}) => {
     useUnprotectedPage()
@@ -15,11 +15,12 @@ const LoginForm = ({setRightButtonText}) => {
         email: "", 
         password: "" 
     })
+    const [isLoading, setIsLoading] = useState(false)
     const history = useHistory()
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        login(form, clear, history, setRightButtonText)
+        login(form, clear, history, setRightButtonText, setIsLoading)
     }
 
     return (
@@ -56,8 +57,9 @@ const LoginForm = ({setRightButtonText}) => {
                 variant="contained"
                 type="submit"
                 margin={"normal"}
-                endIcon={<SendRoundedIcon />}>
-                Entrar
+                endIcon={<SendRoundedIcon />}
+                >
+                { isLoading ? <CircularProgress color={"inherit"} size={24}/> : <>Entrar</> }
                 </Button>
             </InputContainer>
             </form>

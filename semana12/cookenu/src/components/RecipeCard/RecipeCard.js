@@ -7,7 +7,7 @@ import { ScreenContainer } from './Styled';
 
 export const RecipeCard = (props) => {
   return (
-    <ScreenContainer>
+    <ScreenContainer onClick={props.onClick}>
     <Card sx={{ minWidth: 250, maxWidth: 250, margin: '1rem' }}>
       <CardMedia
         sx={{ minHeight: 200, maxHeight: 200}}
@@ -16,7 +16,7 @@ export const RecipeCard = (props) => {
         image={props.image}
         />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h5" component="div" sx={{ textTransform: "uppercase" }}>
         {props.title}
         </Typography>
       </CardContent>
