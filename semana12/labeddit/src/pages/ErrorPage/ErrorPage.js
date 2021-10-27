@@ -1,12 +1,14 @@
 import React from "react"
-import { ScreenContainer } from "./Styled"
+import { ScreenContainer, AlignLogo } from "./Styled"
 import Typography from '@mui/material/Typography'
-// import ErrorLogo from '../../assets/error.png'
+import ErrorLogo from '../../assets/error.png'
 
 const ErrorPage = () => {
     return (
         <ScreenContainer>
-            {/* <img src={ErrorLogo} alt="Erro 404" /> */}
+            <AlignLogo>
+            <img src={ErrorLogo} alt="Erro 404" />
+            </AlignLogo>
             <Typography 
                 color={'primary'} 
                 variant={'h4'} 

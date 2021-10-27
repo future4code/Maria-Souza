@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
-export const ScreenContainer = styled.div `
+export const RecipeListContainer = styled.div `
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    width: 100vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0.5rem;
 `
 
 export const AlignLogo = styled.div `
@@ -14,5 +14,4 @@ export const AlignLogo = styled.div `
     justify-content: center;
     align-items: center;
     margin-top: 2rem;
-    margin-bottom: 3rem;
 `
