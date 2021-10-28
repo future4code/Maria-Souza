@@ -1,18 +1,20 @@
 import React from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
+import Typography from '@mui/material/Typography'
 import { ScreenContainer } from './Styled'
-import useProtectedPage from '../../hooks/useProtectedPage'
-import PostingCardForm from './PostingCardForm'
+import CommentPostForm from './CommentPostForm'
 
 export const PostingCard = (setRightButtonText) => {
-    useProtectedPage()
 
   return (
     <ScreenContainer>
     <Card sx={{ minWidth: 320, maxWidth: 320, margin: '1rem', border: '1px solid #737373' }}>
       <CardContent>
-      <PostingCardForm
+        <Typography color="primary" variant="h4" component="div">
+          Comente
+          </Typography>
+      <CommentPostForm
           setRightButtonText={setRightButtonText}
       />
       </CardContent>

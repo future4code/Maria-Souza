@@ -3,12 +3,13 @@ import PostCard from "../../components/PostCard/PostCard"
 import useProtectedPage from '../../hooks/useProtectedPage'
 import useRequestData from '../../hooks/useRequestData'
 import { BASE_URL } from '../../constants/Urls'
-import { RecipeListContainer, AlignLogo } from "./Styled"
+import { Container, AlignLogo } from "./Styled"
 import { useHistory } from 'react-router-dom'
 import Loading from '../../components/Loading/Loading'
 import PostingCard from '../../components/PostingCard/PostingCard'
 import NewPost from '../../assets/newpost.png'
 import Feed from '../../assets/feed.png'
+import { goToAddPost } from "../../routes/Coordinator"
 
 const FeedPage = () => {
     const [page, SetPage] = useState(1)
@@ -16,9 +17,9 @@ const FeedPage = () => {
     const history = useHistory()
     useProtectedPage()
 
-    // const onClickCard = (id) => {
-    //     goToRecipeDetail(history, id)
-    // }
+    const onClickCard = (id) => {
+        goToAddPost(history, id)
+    }
 
     const postCards = posts.map((post) => {
         return (
@@ -31,7 +32,7 @@ const FeedPage = () => {
                 userVote={post.userVote}
                 username={post.username}
                 createdAt={post.createdAt}
-                // onClick={() => onClickCard(post.id)}
+                onClick={() => onClickCard(post.id)}
                 />
         )
     })
@@ -45,17 +46,9 @@ const FeedPage = () => {
         <AlignLogo>
             <img src={Feed} alt="Feed" />
         </AlignLogo>
-        <RecipeListContainer>
+        <Container>
             {postCards.length > 0 ? postCards : <Loading />}
-        {/* <AddRecipeButton
-            color={"primary"}
-            onClick={() => goToAddRecipes(history)}
-            >
-            <AddCircleRoundedIcon
-            fontSize="large" />
-        </AddRecipeButton> */}
-
-        </RecipeListContainer>
+        </Container>
         </div>
     )
 }

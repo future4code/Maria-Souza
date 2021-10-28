@@ -4,3 +4,5 @@ export const  convertDate = (date) => {
     const year = date.substring(0, 4)
     return `${day}/${month}/${year}`
   }
+
+export default convertDate

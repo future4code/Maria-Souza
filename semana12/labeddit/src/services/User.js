@@ -25,7 +25,7 @@ export const signUp = (body, clear, history, setRightButtonText, setIsLoading) =
     .post(`${BASE_URL}/users/signup`, body)
     .then((res) => {
         localStorage.setItem("token", res.data.token)
-        window.alert("Cadastro efetuado com sucesso! Redirecionando para o seu feed...")
+        window.alert("Cadastro efetuado com sucesso!")
         clear()
         setIsLoading(false)
         goToFeed(history)
@@ -33,6 +33,6 @@ export const signUp = (body, clear, history, setRightButtonText, setIsLoading) =
     })
     .catch((err) => {
         setIsLoading(false)
-        window.alert(err.response.data.message)
+        window.alert("Redirecionando para o seu feed...")
     })
 }

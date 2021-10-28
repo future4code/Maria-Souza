@@ -20,6 +20,7 @@ export const Features = styled.div `
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
+    font-family: 'Roboto'
 `
 
 export const AlignFeatures = styled.div `

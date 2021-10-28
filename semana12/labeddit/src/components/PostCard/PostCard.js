@@ -1,9 +1,9 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import { ScreenContainer, Username, Features, AlignFeatures } from './Styled';
+import * as React from 'react'
+import Card from '@mui/material/Card'
+import CardActions from '@mui/material/CardActions'
+import CardContent from '@mui/material/CardContent'
+import Typography from '@mui/material/Typography'
+import { ScreenContainer, Username, Features, AlignFeatures } from './Styled'
 import { convertDate } from '../../constants/ConvertDate'
 
 export const PostCard = (props) => {
@@ -19,7 +19,7 @@ export const PostCard = (props) => {
         </Typography>
         <AlignFeatures>
         <Features>
-        ⬆️  - ⬇️  - 💬 ({props.commentCount})
+        Votos: ( {props.voteSum} ) - Comentários: ( {props.commentCount} )
         </Features>
         </AlignFeatures>
       </CardContent>

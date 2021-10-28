@@ -2,15 +2,16 @@ import styled from 'styled-components'
 
 export const ScreenContainer = styled.div `
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    margin: 2rem;
-    font-family: 'Roboto';
+    text-align: center;
 `
 
-export const Container = styled.div `
+export const InputContainer = styled.div `
     display: flex;
     flex-direction: column;
-    max-width: 40rem;
-    min-width: 10rem;
+    width: 80vw;
+    max-width: 25rem;
+    align-items: center;
+    margin: 1rem;
 `

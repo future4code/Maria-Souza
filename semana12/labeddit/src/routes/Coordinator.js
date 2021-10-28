@@ -7,7 +7,7 @@ export const goToSignUp = (history) => {
 }
 
 export const goToAddPost = (history, id) => {
-    history.push(`/post/${id}`)
+    history.push(`/posts/${id}/comments`)
 }
 
 export const goToFeed = (history) => {

@@ -23,7 +23,7 @@ const Router = ({setRightButtonText}) => {
                 <Route exact path="/">
                     <FeedPage />
                 </Route>
-                <Route exact path="/post/:id">
+                <Route exact path="/posts/:id/comments">
                     <PostPage />
                 </Route>
                 <Route>
