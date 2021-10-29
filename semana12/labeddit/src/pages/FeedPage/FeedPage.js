@@ -13,7 +13,7 @@ import { goToAddPost } from "../../routes/Coordinator"
 
 const FeedPage = () => {
     const [page, SetPage] = useState(1)
-    const posts = useRequestData([], `${BASE_URL}/posts/?page=${page}&size=30`)
+    const posts = useRequestData([], `${BASE_URL}/posts/?page=${page}&size=200`)
     const history = useHistory()
     useProtectedPage()
 

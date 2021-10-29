@@ -5,16 +5,19 @@ import useForm from '../../hooks/useForm'
 import Button from '@mui/material/Button'
 import { createComment } from "../../services/Post"
 import CircularProgress from '@mui/material/CircularProgress'
+import { useParams } from "react-router"
 
 const CommentPostForm = () => {
     const [form, onChange, clear] = useForm({ 
         body: ""
     })
     const [isLoading, setIsLoading] = useState(false)
+    const params = useParams()
+    const id = params.id
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        createComment(form, clear, setIsLoading)
+        createComment(form, id, clear, setIsLoading)
     }
 
     return (

@@ -2,33 +2,17 @@ import styled from 'styled-components'
 
 export const ScreenContainer = styled.div `
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    text-align: center;
+    align-items: center;
 `
 
 export const Username = styled.div `
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem;
-`
-
-export const Features = styled.div `
-    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
-    font-family: 'Roboto';
-`
-
-export const AlignFeatures = styled.div `
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
 `
 
 export const AlignVotes = styled.div `
@@ -37,4 +21,5 @@ export const AlignVotes = styled.div `
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
+    margin-bottom: 1rem;
 `

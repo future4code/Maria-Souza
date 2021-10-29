@@ -4,15 +4,16 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import { ScreenContainer } from './Styled'
 import CommentPostForm from './CommentPostForm'
+import CommentLogo from '../../assets/comment.png'
 
-export const PostingCard = (setRightButtonText) => {
+export const CommentCard = (setRightButtonText) => {
 
   return (
     <ScreenContainer>
     <Card sx={{ minWidth: 320, maxWidth: 320, margin: '1rem', border: '1px solid #737373' }}>
       <CardContent>
         <Typography color="primary" variant="h4" component="div">
-          Comente
+        <img src={CommentLogo} alt="Comente" />
           </Typography>
       <CommentPostForm
           setRightButtonText={setRightButtonText}
@@ -23,4 +24,4 @@ export const PostingCard = (setRightButtonText) => {
   )
 }
 
-export default PostingCard
+export default CommentCard
