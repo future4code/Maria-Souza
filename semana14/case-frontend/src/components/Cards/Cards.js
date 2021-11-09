@@ -41,7 +41,6 @@ const CardStyle = styled(CardContent)(({ theme }) => ({
 )}
 
  const render = () => {
-
   return (
   <Box sx={{ minWidth: 275, maxWidth: 275 }}>
       <Card variant="outlined">{Cards}</Card>

@@ -1,11 +1,11 @@
 import { Container, TarotContainer } from "./Styled"
 import Button from '@mui/material/Button'
-import { goToPlay } from '../../route/Coordinator'
+import { goToHome } from '../../route/Coordinator'
 import { useHistory } from "react-router"
 import { styled } from '@mui/material/styles'
 import { useEffect, useContext } from 'react'
 import Context from '../../global/Context'
-import Cards from '../../components/Cards/Cards'
+import PickCard from '../../components/PickCard/PickCard'
 import Typography from '@mui/material/Typography'
 import Loading from '../../pages/Loading/Loading'
 
@@ -20,7 +20,7 @@ export const StyledButton = styled(Button)(({ theme }) => ({
   border: 'none'
 }))
 
-export const HomePage = (props) => {
+export const PlayPage = (props) => {
   const history = useHistory()
   const { states, setters, requests } = useContext(Context)
 
@@ -30,7 +30,7 @@ export const HomePage = (props) => {
 
   const renderCards = states.cards.map((card) => {
     return (
-        <Cards 
+        <PickCard 
           key={card.name}
           name={card.name}
           image={card.image}
@@ -42,21 +42,22 @@ export const HomePage = (props) => {
         <Container>
           <StyledButton 
             size="large" 
-            onClick={() => goToPlay(history)} 
+            onClick={() => goToHome(history)} 
             variant="outlined"
           >
-            Jogar
-        </StyledButton>
-        <Typography
-            variant="h4"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 2, display: { xs: '2em', sm: '2em' }, 
-            color: '#212f7f', marginBottom: '1rem',
-            marginTop: '1rem' }}
+            Voltar
+          </StyledButton>
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ flexGrow: 2, display: { xs: '2em', sm: '2em' }, 
+              color: '#212f7f', marginBottom: '1rem',
+              marginTop: '1rem', lineHeight: '1.4rem' }}
             >
-              Baralho
-        </Typography>
+              Mentalize a sua pergunta<br/>
+               e clique em uma carta.
+            </Typography>
           <TarotContainer>
             { renderCards.length > 0 ? renderCards : <Loading /> }     
           </TarotContainer>
@@ -64,4 +65,4 @@ export const HomePage = (props) => {
     )
 }
 
-export default HomePage
+export default PlayPage
