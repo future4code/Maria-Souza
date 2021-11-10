@@ -55,7 +55,7 @@ export const HomePage = (props) => {
             color: '#212f7f', marginBottom: '1rem',
             marginTop: '1rem' }}
             >
-              Baralho
+              Pergunte ao Tarot
         </Typography>
           <TarotContainer>
             { renderCards.length > 0 ? renderCards : <Loading /> }     

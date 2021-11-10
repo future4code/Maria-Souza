@@ -8,6 +8,8 @@ import Context from '../../global/Context'
 import { useContext} from 'react'
 import { CardContainer, SelectedCardContainer } from './Styled'
 import Modal from '@mui/material/Modal'
+import { useHistory } from "react-router"
+import { goToHome } from '../../route/Coordinator'
 
 const CardStyle = styled(CardContent)(({ theme }) => ({
     backgroundColor: '#e3d5a5',
@@ -38,25 +40,38 @@ const CardStyle = styled(CardContent)(({ theme }) => ({
   const PickCard = (props) => {
   const {states, setters, requests} = useContext(Context)
   const [open, setOpen] = useState(false)
+  const [cardName, setCardName] = useState("")
+  const [cardCover, setCardCover] = useState(`${states.cardBack}`)
   const [selectedCard, setSelectedCard] = useState([])
+  const history = useHistory()
+
+  const getRandomNumber = (min, max) => {
+    min = Math.ceil(min)
+    max = Math.floor(max)
+    return Math.floor(Math.random() * (max - min)) + min
+  }
+
+  const shuffleCards = () => {
+    const randomCard = getRandomNumber(0, 77)
+    setCardName(`${states.cards[randomCard].name}`)
+    setCardCover(`${states.cardFront}/${states.cards[randomCard].image}`)
+    setSelectedCard([...selectedCard, randomCard])
+    handleOpen()
+  }
   
   const handleOpen = () => 
     setOpen(true)
 
   const handleClose = () => {
     setOpen(false)
-    window.location.reload()
-  }
-
-  const clickCard = () => {
-    handleOpen()
+    goToHome(history)
   }
 
   return (
   <React.Fragment>
     <CardStyle>
       <Typography>
-        <CardContainer onClick={clickCard}
+        <CardContainer onClick={shuffleCards}
           src={`${states.cardBack}`} 
           alt="Carta" 
         />
@@ -67,21 +82,24 @@ const CardStyle = styled(CardContent)(({ theme }) => ({
             aria-describedby="modal-modal-description"
           >
           <Box sx={style}>
-            <Typography id="modal-modal-title" variant="h6" component="h2" sx={{ textAlign: 'center', marginBottom: '0.5rem', color: '#212f7f'}}>
-              {props.name}
+            <Typography id="modal-modal-title" variant="h6" component="h2" 
+            sx={{ textAlign: 'center', marginBottom: '0.5rem', color: '#212f7f'}}>
+            {cardName}
             </Typography>
               <Typography sx={{ color: '#212f7f', textAlign: 'justify' }}>
               <SelectedCardContainer>
                 <img 
-                  src={`${states.cardFront}/${props.image}`} 
+                  src={cardCover}
                   alt="Carta" 
                 /> 
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porttitor euismod sem, id egestas tellus. Cras tincidunt malesuada mollis. Pellentesque mollis velit erat.
-              </SelectedCardContainer>
-                <Typography id="modal-modal-description" sx={{ mt: 0.5 }}>
-                  Maecenas sagittis magna elit, vitae dictum enim rutrum nec. In mollis eros posuere lacus lobortis placerat scelerisque quis nisl. Duis nisl tortor, pellentesque in fermentum in, tempor nec enim.
-                </Typography>
-            </Typography>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porttitor euismod 
+                  sem, id egestas tellus. Cras tincidunt malesuada mollis. Pellentesque mollis velit erat.
+                  </SelectedCardContainer>
+                  <Typography id="modal-modal-description" sx={{ mt: 0.5 }}>
+                    Maecenas sagittis magna elit, vitae dictum enim rutrum nec. In mollis eros posuere lacus 
+                    lobortis placerat scelerisque quis nisl. Duis nisl tortor, pellentesque in fermentum in, tempor nec enim.
+                  </Typography>
+              </Typography>
           </Box>
          </Modal>
       </Typography>
