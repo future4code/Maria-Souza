@@ -11,8 +11,8 @@ export const ErrorPage = () => {
                 sx={{ textAlign: 'center'}}
                 >
                     <ContainerImg src={Error} alt="Erro 404" /><br/>
-                    Erro 404<br/>
-                     Página não encontrada.
+                        Erro 404<br/>
+                        Página não encontrada.
             </Typography>
         </Container>
     )
