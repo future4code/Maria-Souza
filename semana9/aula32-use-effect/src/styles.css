@@ -1,0 +1,74 @@
+.MainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    align-content: center;
+}
+
+.Logotipo {
+    width: 15rem;
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+    }
+    @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+
+    @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+
+    @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+
+    @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+    }
+
+    @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+.PokeDex {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.Background {
+    width: 40rem;
+}
+
+.SelecionaPokemon {
+    margin-left: -14.4rem;
+    margin-top: 11rem;
+}
+
+.MostraPokemon {
+    margin-left: -18rem;
+    margin-top: -3.4rem;
+}
+
+.PlayList {
+    margin-top: 5px;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+}
+
+.PlayList>audio {
+    height: 1.5rem;
+    width: 10rem;
+}
