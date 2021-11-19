@@ -103,7 +103,7 @@ app
       }
 
       if (!req.body.name && !req.body.capital) {
-        throw new Error("Invalid Parameters")
+        throw new Error("Parâmetros inválidos! Tente novamente.")
       }
 
       if (req.body.name) {
@@ -117,7 +117,7 @@ app
       res
         .status(200)
         .send("País atualizado!")
-        
+
     } catch (error) {
       res
         .status(errorCode)
