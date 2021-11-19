@@ -27,6 +27,44 @@ app
   })
 
 
+// 3)
+
+app
+  .get("/countries/search", (req: Request, res: Response) => {
+
+    let result: country[] = countries
+
+    if (req.query.name) {
+       result = result.filter(
+          country => country.name.includes(req.query.name as string)
+       )
+    }
+
+    if (req.query.capital) {
+       result = result.filter(
+          country => country.capital.includes(req.query.capital as string)
+       )
+    }
+
+    if (req.query.continent) {
+       result = result.filter(
+          country => country.continent.includes(req.query.continent as string)
+       )
+    }
+
+    if (result.length) {
+        res
+          .status(200)
+          .send(result)
+    } else {
+        res
+          .status(401)
+          .send("País não encontrado!")
+    }
+
+})
+
+
 // 2)
 
 app
@@ -46,4 +84,43 @@ app
     }
   })
 
-// 3) e 4) não consegui fazer porque sempre dá "país não encontrado" =(
+
+// 4) 
+
+app
+  .post("/countries/:id", (req: Request, res: Response) => {
+
+    let errorCode: number = 400
+
+    try {
+      const countryIndex: number = countries.findIndex(
+        (country) => country.id === Number(req.params.id)
+      )
+
+      if (countryIndex === -1) {
+        errorCode = 404
+        throw new Error()
+      }
+
+      if (!req.body.name && !req.body.capital) {
+        throw new Error("Invalid Parameters")
+      }
+
+      if (req.body.name) {
+        countries[countryIndex].name = req.body.name
+      }
+
+      if (req.query.capital) {
+        countries[countryIndex].capital = req.body.capital
+      }
+
+      res
+        .status(200)
+        .send("País atualizado!")
+        
+    } catch (error) {
+      res
+        .status(errorCode)
+        .send("Ocorreu um erro!")
+    }
+})
