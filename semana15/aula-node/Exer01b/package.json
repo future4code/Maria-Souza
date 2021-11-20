@@ -1,0 +1,12 @@
+{
+    "name": "aula-node",
+    "version": "1.0.0",
+    "description": "",
+    "main": "exer01b.js",
+    "scripts": {
+      "start": "node ./exer01b.js"
+    },
+    "author": "Maria Helena Souza",
+    "license": "ISC"
+  }
+  
