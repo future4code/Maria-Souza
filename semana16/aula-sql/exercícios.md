@@ -101,7 +101,7 @@ CREATE TABLE Filmes(
 id VARCHAR(255) PRIMARY KEY,
 nome VARCHAR (255) NOT NULL,
 sinopse VARCHAR (255) NOT NULL,
-data_de_Filmeslancamento DATE NOT NULL,
+data_de_lancamento DATE NOT NULL,
 avaliacao VARCHAR(10) NOT NULL
 );
 `````
