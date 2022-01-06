@@ -1,10 +1,12 @@
 import dotenv from 'dotenv'
 import app from "./app"
 import createUser from './endpoints/createUser'
-import passRecovery from './endpoints/passRecovery'
 import { getAddressInfo } from './services/getAddressInfo'
-import { mailTransporter } from './services/mailTransporter'
 
 dotenv.config()
 
-app.post('/users/signup', createUser)
+// 1)
+getAddressInfo("05424150").then(console.log) // Retorna o endereço de qualquer CEP dentro da função
+
+// 2)
+app.post('/users/signup', createUser) // Cria o usuário com o endereço completo dele

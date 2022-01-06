@@ -9,7 +9,13 @@ const createTables = () => connection.raw(`
          name VARCHAR(255) NOT NULL,
          nickname VARCHAR(255) NOT NULL,
          email VARCHAR(255) UNIQUE NOT NULL,
-         address VARCHAR(255) NOT NULL
+         zipcode VARCHAR(255) NOT NULL,
+         street VARCHAR(255) NOT NULL,
+         number VARCHAR(255) NOT NULL,
+         complement VARCHAR(255),
+         neighborhood VARCHAR(255) NOT NULL,
+         city VARCHAR(255) NOT NULL,
+         state VARCHAR(255) NOT NULL
       );
    `)
    .then(() => { console.log("Tabelas criadas") })

@@ -1,16 +1,28 @@
 [
    {
-      "id" :1,
+      "id": 1,
       "name":  "Alice",
       "nickname":  "Lili",
       "email": "alice@gmail.com",
-      "address":  "Avenida Portugal, 637 - Jardim Atlântico (31550-000) - Belo Horizonte, MG"
+      "zipcode": "31550-000", 
+      "street": "Avenida Portugal", 
+      "number": "637", 
+      "complement": "", 
+      "neighborhood": "Jardim Atlântico", 
+      "city": "Belo Horizonte", 
+      "state": "MG"
    },
    {
-      "id" :2,
+      "id": 2,
       "name":  "Bob",
       "nickname":  "Robert",
       "email": "bob@gmail.com",
-      "address":  "Rua Marechal Hermes, 542 - Juvevê (80530-230) - Curitiba, PR"
+      "zipcode": "80530-230", 
+      "street": "Rua Marechal Hermes", 
+      "number": "542", 
+      "complement": "Atrás do carrinho de pipoca", 
+      "neighborhood": "Juvevê", 
+      "city": "Curitiba", 
+      "state": "PR"
    }
 ]
