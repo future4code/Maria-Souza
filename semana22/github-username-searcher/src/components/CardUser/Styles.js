@@ -21,4 +21,8 @@ export const ContainerRepo = styledComponents.div `
     justify-content: center;
     align-items: center;
     padding: 1rem;
+
+    &:hover {
+        cursor: pointer;
+    }
 `
