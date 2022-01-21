@@ -5,6 +5,7 @@ import IconButton from '@mui/material/IconButton'
 import { useState, useContext } from "react"
 import { GlobalContext } from '../../context/GlobalState'
 import Client from '../../services/Client'
+import Logo from '../../assets/logo.png'
 
 export const Search = (props) => {
     const global = useContext(GlobalContext)
@@ -14,7 +15,7 @@ export const Search = (props) => {
         e.preventDefault()
     }
 
-    async function getData() {
+    const getData = async () => {
         try {
             const response = await Client.get(`${search}`)
             const repos = await Client.get(`${search}/repos`)
@@ -28,7 +29,7 @@ export const Search = (props) => {
     return (
         <div>
             <Typography variant="h4" gutterBottom>
-                GH User Search
+                <img src={Logo} alt={"Logo"} />
             </Typography>
             <form noValidate onSubmit={handleSubmit}>
             <InputBase

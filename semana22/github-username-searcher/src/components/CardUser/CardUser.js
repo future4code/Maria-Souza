@@ -23,7 +23,6 @@ export const CardUser = (props) => {
   return (
     <Card sx={{ width: '20rem' }}>
     <ContainerTop>
-
       <CustomizedAvatar
         avatar={
           <Avatar

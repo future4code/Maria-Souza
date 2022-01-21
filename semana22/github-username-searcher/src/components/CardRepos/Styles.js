@@ -18,15 +18,19 @@ export const ContainerRepo = styledComponents.div `
         font-size: 12pt;
         width: 100%;
         overflow: hidden;
-        color: #444;
+        color: #444444;
     }
 
     p {
         font-size: 9pt;
-        color: #777;
+        color: #777777;
         width: 100%;
         overflow: hidden;
         line-height: 1.1;
+    }
+
+    &:hover {
+        cursor: pointer;
     }
 `
 

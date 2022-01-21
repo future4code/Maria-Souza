@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { styled } from '@mui/material/styles'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
@@ -41,7 +40,7 @@ export const CardRepos = (props) => {
       </CardContent>
     </Card>
     <ContainerButton>
-    <Button onClick={goBack} variant="contained" startIcon={<ArrowBackIosRoundedIcon />}>
+    <Button onClick={goBack} variant="contained" color={"secondary"} startIcon={<ArrowBackIosRoundedIcon />}>
         Go back
       </Button>
       </ContainerButton>

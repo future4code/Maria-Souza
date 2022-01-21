@@ -7,7 +7,12 @@ export const GlobalState = (props) => {
     const [userRepo, setUserRepo] = useState({})
 
     return (
-        <GlobalContext.Provider value={{userData,setUserData, userRepo, setUserRepo}}>
+        <GlobalContext.Provider value={{
+            userData, 
+            setUserData, 
+            userRepo, 
+            setUserRepo}}
+        >
             {props.children}
         </GlobalContext.Provider>
     )
