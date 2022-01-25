@@ -1,7 +1,9 @@
+import Router from './routes/Router'
+
 export const App = () => {
   return (
     <div>
-      oi!
+      <Router />
     </div>
   )
 }
