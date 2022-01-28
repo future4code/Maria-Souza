@@ -1,12 +1,12 @@
 import Sidebar from "../../components/Sidebar/Sidebar"
-import MainContent from '../../components/MainContent/MainContent'
+import Footer from '../../components/Footer/Footer'
 import Home from '../../components/Home/Home'
 
 export const HomePage = () => {
     return (
         <div>
             <Sidebar />
-            <MainContent />
+            <Footer />
             <Home />
         </div>
     )

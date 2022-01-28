@@ -1,7 +1,13 @@
+import Footer from '../../components/Footer/Footer'
+import LotoM from '../../components/LotoM/LotoM'
+import SidebarLotoM from '../../components/SidebarLotoM/SidebarLotoM'
+
 export const LotoMania = () => {
     return (
         <div>
-            LotoMania
+            <SidebarLotoM />
+            <LotoM />
+            <Footer />
         </div>
     )
 }

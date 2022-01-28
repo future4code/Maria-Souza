@@ -1,6 +1,0 @@
-export const mega = "#6BEFA3"
-export const quina = "#8666EF"
-export const lotofacil = "#DD7AC6"
-export const lotomania = "#FFAB64"
-export const timemania = "#5AAD7D"
-export const diaSorte = "#BFAF83"

@@ -59,7 +59,7 @@ export const TitleContainer = styled.div `
 
         @media (max-width: 800px) {
             position: absolute;
-            left: 31.68%;
+            left: 30.68%;
             right: 31.68%;
             top: 32.12%;
             bottom: 65.78%;
@@ -68,6 +68,7 @@ export const TitleContainer = styled.div `
             font-size: 1.87rem;
             line-height: 1.70rem;
             width: 13rem;
+            height: 100vh;  
         }
 `
 
@@ -101,7 +102,7 @@ export const SelectContainer = styled.div `
         bottom: 88.69%;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 500px) {
         position: absolute;
         left: 23.67%;
         right: 27.86%;
@@ -149,6 +150,6 @@ export const DrawDataContainer = styled.div `
         margin-left: 7rem;
         font-size: 1rem;
         line-height: 0.62rem;
-        width: 7rem;
+        width: 10rem;
     }
 `

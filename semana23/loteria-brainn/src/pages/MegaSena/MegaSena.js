@@ -1,9 +1,13 @@
-import Sidebar from '../../components/Sidebar/Sidebar'
+import Footer from '../../components/Footer/Footer'
+import Mega from '../../components/Mega/Mega'
+import SidebarMega from '../../components/SidebarMega/SidebarMega'
 
 export const MegaSena = () => {
     return (
         <div>
-            <Sidebar />
+            <SidebarMega />
+            <Footer />
+            <Mega />
         </div>
     )
 }
